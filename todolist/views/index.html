@@ -28,7 +28,7 @@ body {background-color: #ffe6e6;}
 //var http = require('http');	
 var app = angular.module('myApp', []); 
 app.controller('todoCtrl', function($scope) {
-    $scope.todoList = [{task:"kill my self", isComplete:false}];
+    $scope.todoList = [{task:"wash my clothes", isComplete:false}];
     //var x = this;
     $scope.todoAdd = function() {
         $scope.todoList.push({task:$scope.todoInput, isComplete:false});
