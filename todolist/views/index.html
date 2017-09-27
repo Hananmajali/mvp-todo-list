@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+</head>
 <style>
 body {background-color: #ffe6e6;}
 </style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body ng-app="myApp" ng-controller="todoCtrl">
 
@@ -17,17 +21,32 @@ body {background-color: #ffe6e6;}
 
 <div ng-repeat="todo in todoList">
     <input type="checkbox" ng-model="todo.isComplete"> <span ng-bind="todo.task"></span>
+    <br>
 </div>
 
 <script>
+//var http = require('http');	
 var app = angular.module('myApp', []); 
 app.controller('todoCtrl', function($scope) {
-    $scope.todoList = [{task:'kill my self', isComplete:false}];
-
+    $scope.todoList = [{task:"kill my self", isComplete:false}];
+    //var x = this;
     $scope.todoAdd = function() {
         $scope.todoList.push({task:$scope.todoInput, isComplete:false});
         $scope.todoInput = "";
     };
+
+
+
+    // $scope.findOne= function(){
+    // 	$scope.task= tasks.get({
+    // 		taskId: $routerParams.taskId
+    // 	})
+    // };
+
+    // $scope.getTasks=function(){
+    // 	return x.http.get('http://localhost:3000/api/tasks')
+    // 	then(res => res.json())
+    // }
 
 });
 </script>
