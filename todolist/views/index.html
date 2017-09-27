@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
+<style>
+body {background-color: #ffe6e6;}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body ng-app="myApp" ng-controller="todoCtrl">
 
-<h2>My Todo List</h2>
+<h2 style="color:#330000; font-family:verdana; font-size: 200% ">My Todo List</h2>
 
 <form ng-submit="todoAdd()">
-    <input type="text" ng-model="todoInput" size="100" placeholder="Add New">
-    <input type="submit" value="Add New">
+    <input style="padding: 8px;" type="text" ng-model="todoInput" size="65" placeholder="write here">
+    <input style="margin: 10px;;" type="submit" value="Add New">
 </form>
 
 <br>
 
-<div ng-repeat="x in todoList">
-    <input type="checkbox" ng-model="x.isComplete"> <span ng-bind="x.task"></span>
+<div ng-repeat="todo in todoList">
+    <input type="checkbox" ng-model="todo.isComplete"> <span ng-bind="todo.task"></span>
 </div>
 
 <script>
